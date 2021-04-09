@@ -44,19 +44,3 @@ def test_next_points_state(coordinateY, coordinateX, next_state):
 
     assert obj.next_points_state(coordinateY, coordinateX, obj.data_table) == next_state
 
-
-def test_next_field_state():
-    obj = Game_of_life()
-    obj.data_table = [[True, True, True, False, False, True],
-                      [False, True, False, True, False, True],
-                      [False, False, False, False, False, True],
-                      [False, False, False, False, False, False],
-                      [True, False, True, False, False, False]]
-    next = [[False, False, False, True, True, True],
-            [False, True, False, False, False, True],
-            [True, False, False, False, True, False],
-            [False, False, False, False, False, False],
-            [True, False, True, False, False, True]]
-
-    assert obj.next_field_state(obj.data_table) == next
-
